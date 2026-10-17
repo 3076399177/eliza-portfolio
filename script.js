@@ -63,7 +63,7 @@ const collections = {
     { title: "娴锋姤璁捐鍚堥泦", type: "image", src: "assets/works/poster-collection.webp" },
     { title: "浜у搧鍝佺墝娴锋姤璁捐", type: "image", src: "assets/works/product-brand-poster.webp" },
     { title: "鍩庡競椋庢牸娴锋姤", type: "image", src: "assets/works/city-poster.webp" },
-    { title: "Logo 涓庡浘褰㈡爣蹇楄璁?, type: "image", src: "assets/portfolio/logo-cover.webp" },
+    { title: "Logo 涓庡浘褰㈡爣蹇楄璁?", type: "image", src: "assets/portfolio/logo-cover.webp" },
   ],
   editing: [
     { title: "绮炬补骞垮憡鐭墖", type: "video", src: "assets/works/essential-oil-ad.mp4", meta: "C4D 寤烘ā 路 PR 鍚堟垚 路 DaVinci 璋冭壊" },
@@ -79,7 +79,7 @@ const collections = {
     { title: "鐑熻姳鐖嗗彂灞曠ず", type: "video", src: "assets/works/ae-firework.mp4" },
     { title: "鍦扮悆鍔ㄦ晥灞曠ず", type: "video", src: "assets/works/ae-earth.mp4" },
     { title: "鎴垮眿鍔ㄦ晥灞曠ず", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AE鐗规晥/鎴垮瓙.mp4" },
-    { title: "鏁板瓧娴佺壒鏁?, type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AE鐗规晥/鏁板瓧娴?mp4" },
+    { title: "鏁板瓧娴佺壒鏁?", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AE鐗规晥/鏁板瓧娴?mp4" },
   ],
   commercial: [
     { title: "鍟嗕笟骞垮憡鐭墖", type: "video", src: "assets/works/commercial-candle.mp4" },
@@ -87,14 +87,14 @@ const collections = {
     { title: "闃叉檼浜у搧骞垮憡", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?骞垮憡/Mistine闃叉檼妫?080p.mp4" },
   ],
   aiDrama: [
-    { title: "鐚挭缁艰壓 鍏堝鐗?, type: "video", src: "assets/works/ai-drama-cat.mp4" },
-    { title: "鐚挭缁艰壓 绗竴闆?, type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/鐚挭缁艰壓/鐚尗绗竴闆?mp4" },
-    { title: "鐚挭缁艰壓 绗簩闆?, type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/鐚挭缁艰壓/鐚玽log绗簩闆嗭紙鐟烇級.mp4" },
-    { title: "鐚挭缁艰壓 绗竷闆?, type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/鐚挭缁艰壓/鐚尗绗竷闆唙log.mp4" },
-    { title: "鐚挭缁艰壓 绗叓闆?, type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/鐚挭缁艰壓/鐚尗绗叓闆唙log.mp4" },
-    { title: "闇告€荤┛瓒?绗竴闆?, type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/闇告€荤┛瓒?闇告€荤1闆嗭紙ct).mp4" },
-    { title: "闇告€荤┛瓒?绗簩闆?, type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/闇告€荤┛瓒?闇告€荤2闆嗭紙lyx锛?mp4" },
-    { title: "闇告€荤┛瓒?绗笁闆?, type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/闇告€荤┛瓒?闇告€荤3闆嗭紙gy锛?mp4" },
+    { title: "鐚挭缁艰壓 鍏堝鐗?", type: "video", src: "assets/works/ai-drama-cat.mp4" },
+    { title: "鐚挭缁艰壓 绗竴闆?", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/鐚挭缁艰壓/鐚尗绗竴闆?mp4" },
+    { title: "鐚挭缁艰壓 绗簩闆?", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/鐚挭缁艰壓/鐚玽log绗簩闆嗭紙鐟烇級.mp4" },
+    { title: "鐚挭缁艰壓 绗竷闆?", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/鐚挭缁艰壓/鐚尗绗竷闆唙log.mp4" },
+    { title: "鐚挭缁艰壓 绗叓闆?", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/鐚挭缁艰壓/鐚尗绗叓闆唙log.mp4" },
+    { title: "闇告€荤┛瓒?绗竴闆?", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/闇告€荤┛瓒?闇告€荤1闆嗭紙ct).mp4" },
+    { title: "闇告€荤┛瓒?绗簩闆?", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/闇告€荤┛瓒?闇告€荤2闆嗭紙lyx锛?mp4" },
+    { title: "闇告€荤┛瓒?绗笁闆?", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/闇告€荤┛瓒?闇告€荤3闆嗭紙gy锛?mp4" },
     { title: "闈掕泧 鐗囨 09", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/闈掕泧/闈掕泧-9锛堜腑鑻憋級锛堢憺.mp4" },
     { title: "闈掕泧 鐗囨 11", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/闈掕泧/闈掕泧-11锛堜腑鑻憋級锛堢憺锛?mp4" },
     { title: "闈掕泧 鐗囨 12", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/闈掕泧/闈掕泧12锛堜腑鑻憋級锛堢憺锛?mp4" },
@@ -110,7 +110,7 @@ const collections = {
     { title: "Omega 鐗囨 40", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/Omega/Omega-40锛堜腑鑻憋級锛堢憺锛?mp4" },
     { title: "Omega 鐗囨 41", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/Omega/Omega-41锛堜腑鑻憋級锛堢憺锛?mp4" },
     { title: "Omega 鐗囨 42", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/Omega/Omega-42锛堜腑鑻憋級锛堢憺锛?mp4" },
-    { title: "涔︾儸鍏堝鐗?, type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/涔︾儸/銆婁功鐑€嬪厛瀵肩墖.mp4" },
+    { title: "涔︾儸鍏堝鐗?", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/涔︾儸/銆婁功鐑€嬪厛瀵肩墖.mp4" },
     { title: "Last Signal", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/last signal/7鏈?1鏃?mp4" },
     { title: "鑿滃競鍦?Vlog", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/鑿滃競鍦簐log.mp4" },
     { title: "鎭嬬埍缁艰壓", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/鎭嬬埍缁艰壓.mp4" },
@@ -129,21 +129,21 @@ const makeGraphicCollection = (groupNames, limit = 18) => {
 
 collections.posterHighlights = [
   { title: "娴锋姤鍚堥泦灏侀潰", type: "image", src: "assets/works/featured-poster-mosaic.webp" },
-  ...makeGraphicCollection(["娴锋姤 / 婕墽娴锋姤", "鐢靛奖绾ф捣鎶?, "娴锋姤 / 瀛椾綋璁捐", "娴锋姤 / 缇庨椁愰ギ娴锋姤", "瑗垮畨鏂囨梾"], 20),
+  ...makeGraphicCollection([], 20),
 ];
 
 collections.brandPosterHighlights = [
   { title: "浜у搧鍝佺墝娴锋姤鍚堥泦", type: "image", src: "assets/works/featured-brand-mosaic.webp" },
-  ...makeGraphicCollection(["浜у搧鍝佺墝娴锋姤", "娴锋姤 / 浜у搧鍝佺墝娴锋姤", "绮夌儳鐜荤拑瑙嗚鏂规"], 18),
+  ...makeGraphicCollection([], 18),
 ];
 
 collections.cityPosterHighlights = [
   { title: "鍩庡競瑙嗚娴锋姤鍚堥泦", type: "image", src: "assets/works/featured-city-mosaic.webp" },
-  ...makeGraphicCollection(["鍩庡競椋庢牸娴锋姤", "娴锋姤 / 鍩庡競椋庢牸娴锋姤", "瑗垮畨鏂囨梾"], 18),
+  ...makeGraphicCollection([], 18),
 ];
 
 collections.logoBrandHighlights = [
-  { title: "Logo 涓庡搧鐗岀郴缁熷皝闈?, type: "image", src: "assets/works/featured-logo-mosaic.webp" },
+  { title: "Logo 涓庡搧鐗岀郴缁熷皝闈?", type: "image", src: "assets/works/featured-logo-mosaic.webp" },
   { title: "Dog Chef 鍝佺墝鏍囧織", type: "image", src: "assets/works/pdf-pages/page-04.webp" },
   { title: "Logo 璁捐鏂规", type: "image", src: "assets/works/pdf-pages/page-06.webp" },
   { title: "鍝佺墝杈呭姪鍥惧舰", type: "image", src: "assets/works/pdf-pages/page-07.webp" },
@@ -224,25 +224,25 @@ const categoryData = [
   {
     index: "01",
     name: "骞抽潰璁捐",
-    desc: "娴锋姤銆佸搧鐗岃瑙夈€佸瓧浣撶増寮忋€丩ogo 涓庡浼犵墿鏂欍€?,
+    desc: "娴锋姤銆佸搧鐗岃瑙夈€佸瓧浣撶増寮忋€丩ogo 涓庡浼犵墿鏂欍€?",
     collection: "graphic",
   },
   {
     index: "02",
     name: "AI 婕墽",
-    desc: "AI 褰卞儚鍙欎簨銆佽鑹茬煭鍓с€佺郴鍒楀寲瑙嗛鍜屾晠浜嬪壀杈戙€?,
+    desc: "AI 褰卞儚鍙欎簨銆佽鑹茬煭鍓с€佺郴鍒楀寲瑙嗛鍜屾晠浜嬪壀杈戙€?",
     collection: "aiDrama",
   },
   {
     index: "03",
-    name: "鍓緫涓庣壒鏁?,
-    desc: "鑺傚鍓緫銆佺晫闈㈣浆鍦恒€丄E 鍔ㄦ晥銆佹墜鍔胯窡韪拰瑙嗚鐗规晥銆?,
+    name: "鍓緫涓庣壒鏁?",
+    desc: "鑺傚鍓緫銆佺晫闈㈣浆鍦恒€丄E 鍔ㄦ晥銆佹墜鍔胯窡韪拰瑙嗚鐗规晥銆?",
     collection: "editing",
   },
   {
     index: "04",
     name: "鍟嗕笟骞垮憡",
-    desc: "浜у搧骞垮憡銆佹枃鏃呰棰戙€佸晢涓氱煭鐗囦笌瑙嗚鍖呰銆?,
+    desc: "浜у搧骞垮憡銆佹枃鏃呰棰戙€佸晢涓氱煭鐗囦笌瑙嗚鍖呰銆?",
     collection: "commercial",
   },
 ];
