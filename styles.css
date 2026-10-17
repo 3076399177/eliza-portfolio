@@ -1618,6 +1618,31 @@ a {
   font-size: 0.9rem;
 }
 
+.preview-unavailable {
+  width: min(100%, 760px);
+  min-height: 260px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 12px;
+  padding: 32px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: radial-gradient(circle at 50% 35%, rgba(111, 143, 255, 0.12), #050608 62%);
+  color: var(--ink);
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.preview-unavailable strong {
+  font-size: 1.05rem;
+}
+
+.preview-unavailable span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
 .preview-meta {
   margin: 14px 0 0;
   color: rgba(244, 241, 234, 0.68);

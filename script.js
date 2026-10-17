@@ -32,6 +32,20 @@ const normalizeSrc = (src) => {
   }
 };
 
+const isUnavailableLocalSource = (src) =>
+  /^file:\/\//i.test(String(src || "")) && window.location.protocol.startsWith("http");
+
+const renderUnavailableVideo = (target, item) => {
+  const notice = document.createElement("div");
+  notice.className = "preview-unavailable";
+  const label = document.createElement("strong");
+  label.textContent = item.title || "Video work";
+  const detail = document.createElement("span");
+  detail.textContent = "This video is not available for online playback yet.";
+  notice.append(label, detail);
+  target.appendChild(notice);
+};
+
 const prepareVideo = (video) => {
   video.controls = true;
   video.autoplay = true;
@@ -399,6 +413,10 @@ if (previewModal && previewBody && previewTitle && previewClose) {
     target.innerHTML = "";
 
     if (item.type === "video") {
+      if (isUnavailableLocalSource(item.src)) {
+        renderUnavailableVideo(target, item);
+        return;
+      }
       const video = document.createElement("video");
       video.src = normalizeSrc(item.src);
       prepareVideo(video);
@@ -563,6 +581,13 @@ if (libraryTabs && libraryGroups && Array.isArray(window.WORKS_LIBRARY)) {
       previewTitle.textContent = item.title;
 
       if (item.type === "video") {
+        if (isUnavailableLocalSource(item.src)) {
+          renderUnavailableVideo(previewBody, item);
+          previewModal.classList.add("is-open");
+          previewModal.setAttribute("aria-hidden", "false");
+          document.body.style.overflow = "hidden";
+          return;
+        }
         const video = document.createElement("video");
         video.src = normalizeSrc(item.src);
         prepareVideo(video);
