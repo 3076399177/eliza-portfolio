@@ -32,17 +32,13 @@ const normalizeSrc = (src) => {
   }
 };
 
-const isUnavailableLocalSource = (src) =>
+const isLocalOnlySource = (src) =>
   /^file:\/\//i.test(String(src || "")) && window.location.protocol.startsWith("http");
 
-const renderUnavailableVideo = (target, item) => {
+const renderLocalOnlyNotice = (target, item) => {
   const notice = document.createElement("div");
-  notice.className = "preview-unavailable";
-  const label = document.createElement("strong");
-  label.textContent = item.title || "Video work";
-  const detail = document.createElement("span");
-  detail.textContent = "This video is not available for online playback yet.";
-  notice.append(label, detail);
+  notice.className = "preview-local-only";
+  notice.innerHTML = `<strong>${item.title}</strong><span>该作品视频正在迁移至在线版本</span>`;
   target.appendChild(notice);
 };
 
@@ -60,62 +56,62 @@ const prepareVideo = (video) => {
 
 const collections = {
   graphic: [
-    { title: "娴锋姤璁捐鍚堥泦", type: "image", src: "assets/works/poster-collection.webp" },
-    { title: "浜у搧鍝佺墝娴锋姤璁捐", type: "image", src: "assets/works/product-brand-poster.webp" },
-    { title: "鍩庡競椋庢牸娴锋姤", type: "image", src: "assets/works/city-poster.webp" },
-    { title: "Logo 涓庡浘褰㈡爣蹇楄璁?", type: "image", src: "assets/portfolio/logo-cover.webp" },
+    { title: "海报设计合集", type: "image", src: "assets/works/poster-collection.webp" },
+    { title: "产品品牌海报设计", type: "image", src: "assets/works/product-brand-poster.webp" },
+    { title: "城市风格海报", type: "image", src: "assets/works/city-poster.webp" },
+    { title: "Logo 与图形标志设计", type: "image", src: "assets/portfolio/logo-cover.webp" },
   ],
   editing: [
-    { title: "绮炬补骞垮憡鐭墖", type: "video", src: "assets/works/essential-oil-ad.mp4", meta: "C4D 寤烘ā 路 PR 鍚堟垚 路 DaVinci 璋冭壊" },
-    { title: "婊戝睆鍗＄偣鍓緫", type: "video", src: "assets/works/editing-slideshow-beat.mp4" },
-    { title: "娓告垙鐣岄潰杞満", type: "video", src: "assets/works/editing-game-transition.mp4" },
-    { title: "Vivo 浜у搧鍓緫", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?鍓緫浣滃搧/vivo.mp4" },
-    { title: "娓告垙涓婚娣峰壀", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?鍓緫浣滃搧/鍘熺.mp4" },
-    { title: "Omega 娣峰壀", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?鍓緫浣滃搧/Omega娣峰壀.mp4" },
-    { title: "TVC 璋冭壊缁冧範", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?鍓緫浣滃搧/TVC骞垮憡缁冧範杈捐姮濂?mp4" },
+    { title: "精油广告短片", type: "video", src: "assets/works/essential-oil-ad.mp4", meta: "C4D 建模 · PR 合成 · DaVinci 调色" },
+    { title: "滑屏卡点剪辑", type: "video", src: "assets/works/editing-slideshow-beat.mp4" },
+    { title: "游戏界面转场", type: "video", src: "assets/works/editing-game-transition.mp4" },
+    { title: "Vivo 产品剪辑", type: "video", src: "file:///F:/作品集整理/剪辑作品/vivo.mp4" },
+    { title: "游戏主题混剪", type: "video", src: "file:///F:/作品集整理/剪辑作品/原神.mp4" },
+    { title: "Omega 混剪", type: "video", src: "file:///F:/作品集整理/剪辑作品/Omega混剪.mp4" },
+    { title: "TVC 调色练习", type: "video", src: "file:///F:/作品集整理/剪辑作品/TVC广告练习达芬奇.mp4" },
   ],
   ae: [
-    { title: "鎵嬪娍璺熻釜鐗规晥", type: "video", src: "assets/works/ae-tracking.mp4" },
-    { title: "鐑熻姳鐖嗗彂灞曠ず", type: "video", src: "assets/works/ae-firework.mp4" },
-    { title: "鍦扮悆鍔ㄦ晥灞曠ず", type: "video", src: "assets/works/ae-earth.mp4" },
-    { title: "鎴垮眿鍔ㄦ晥灞曠ず", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AE鐗规晥/鎴垮瓙.mp4" },
-    { title: "鏁板瓧娴佺壒鏁?", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AE鐗规晥/鏁板瓧娴?mp4" },
+    { title: "手势跟踪特效", type: "video", src: "assets/works/ae-tracking.mp4" },
+    { title: "烟花爆发展示", type: "video", src: "assets/works/ae-firework.mp4" },
+    { title: "地球动效展示", type: "video", src: "assets/works/ae-earth.mp4" },
+    { title: "房屋动效展示", type: "video", src: "file:///F:/作品集整理/AE特效/房子.mp4" },
+    { title: "数字流特效", type: "video", src: "file:///F:/作品集整理/AE特效/数字流.mp4" },
   ],
   commercial: [
-    { title: "鍟嗕笟骞垮憡鐭墖", type: "video", src: "assets/works/commercial-candle.mp4" },
-    { title: "鏂囨梾骞垮憡鐭墖", type: "video", src: "assets/works/commercial-datong-travel.mp4" },
-    { title: "闃叉檼浜у搧骞垮憡", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?骞垮憡/Mistine闃叉檼妫?080p.mp4" },
+    { title: "商业广告短片", type: "video", src: "assets/works/commercial-candle.mp4" },
+    { title: "文旅广告短片", type: "video", src: "assets/works/commercial-datong-travel.mp4" },
+    { title: "防晒产品广告", type: "video", src: "file:///F:/作品集整理/广告/Mistine防晒棒1080p.mp4" },
   ],
   aiDrama: [
-    { title: "鐚挭缁艰壓 鍏堝鐗?", type: "video", src: "assets/works/ai-drama-cat.mp4" },
-    { title: "鐚挭缁艰壓 绗竴闆?", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/鐚挭缁艰壓/鐚尗绗竴闆?mp4" },
-    { title: "鐚挭缁艰壓 绗簩闆?", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/鐚挭缁艰壓/鐚玽log绗簩闆嗭紙鐟烇級.mp4" },
-    { title: "鐚挭缁艰壓 绗竷闆?", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/鐚挭缁艰壓/鐚尗绗竷闆唙log.mp4" },
-    { title: "鐚挭缁艰壓 绗叓闆?", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/鐚挭缁艰壓/鐚尗绗叓闆唙log.mp4" },
-    { title: "闇告€荤┛瓒?绗竴闆?", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/闇告€荤┛瓒?闇告€荤1闆嗭紙ct).mp4" },
-    { title: "闇告€荤┛瓒?绗簩闆?", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/闇告€荤┛瓒?闇告€荤2闆嗭紙lyx锛?mp4" },
-    { title: "闇告€荤┛瓒?绗笁闆?", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/闇告€荤┛瓒?闇告€荤3闆嗭紙gy锛?mp4" },
-    { title: "闈掕泧 鐗囨 09", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/闈掕泧/闈掕泧-9锛堜腑鑻憋級锛堢憺.mp4" },
-    { title: "闈掕泧 鐗囨 11", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/闈掕泧/闈掕泧-11锛堜腑鑻憋級锛堢憺锛?mp4" },
-    { title: "闈掕泧 鐗囨 12", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/闈掕泧/闈掕泧12锛堜腑鑻憋級锛堢憺锛?mp4" },
-    { title: "闈掕泧 鐗囨 27", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/闈掕泧/闈掕泧-27锛堜腑鑻憋級锛堢憺锛?mp4" },
-    { title: "闈掕泧 鐗囨 28", type: "video", src: "assets/works/hosted/青蛇-28.mp4" },
-    { title: "闈掕泧 鐗囨 30", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/闈掕泧/闈掕泧-30锛堜腑鑻憋級锛堢憺锛?mp4" },
-    { title: "Omega EP01", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/Omega/EP01.mp4" },
-    { title: "Omega EP02", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/Omega/EP02.mp4" },
-    { title: "Omega EP03", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/Omega/EP03.mp4" },
-    { title: "Omega 鐗囨 12", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/Omega/Omega-12锛堜腑鑻憋級锛堢憺锛?mp4" },
-    { title: "Omega 鐗囨 16", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/Omega/Omega-16锛堜腑鑻憋級锛堢憺锛?mp4" },
-    { title: "Omega 鐗囨 17", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/Omega/Omega-17锛堜腑鑻憋級锛堢憺锛?mp4" },
-    { title: "Omega 鐗囨 40", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/Omega/Omega-40锛堜腑鑻憋級锛堢憺锛?mp4" },
-    { title: "Omega 鐗囨 41", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/Omega/Omega-41锛堜腑鑻憋級锛堢憺锛?mp4" },
-    { title: "Omega 鐗囨 42", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/Omega/Omega-42锛堜腑鑻憋級锛堢憺锛?mp4" },
-    { title: "涔︾儸鍏堝鐗?", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/涔︾儸/銆婁功鐑€嬪厛瀵肩墖.mp4" },
-    { title: "Last Signal", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/last signal/7鏈?1鏃?mp4" },
-    { title: "鑿滃競鍦?Vlog", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/鑿滃競鍦簐log.mp4" },
-    { title: "鎭嬬埍缁艰壓", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/鎭嬬埍缁艰壓.mp4" },
-    { title: "鏈笘绯诲垪", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/鏈笘绯诲垪/鏈笘-11.mp4" },
-    { title: "涓涓婚鐭墖", type: "video", src: "file:///F:/浣滃搧闆嗘暣鐞?AI婕墽/涓/鏈€缁?mp4" },
+    { title: "猫咪综艺 先导片", type: "video", src: "assets/works/ai-drama-cat.mp4" },
+    { title: "猫咪综艺 第一集", type: "video", src: "file:///F:/作品集整理/AI漫剧/猫咪综艺/猫猫第一集.mp4" },
+    { title: "猫咪综艺 第二集", type: "video", src: "file:///F:/作品集整理/AI漫剧/猫咪综艺/猫vlog第二集（瑞）.mp4" },
+    { title: "猫咪综艺 第七集", type: "video", src: "file:///F:/作品集整理/AI漫剧/猫咪综艺/猫猫第七集vlog.mp4" },
+    { title: "猫咪综艺 第八集", type: "video", src: "file:///F:/作品集整理/AI漫剧/猫咪综艺/猫猫第八集vlog.mp4" },
+    { title: "霸总穿越 第一集", type: "video", src: "file:///F:/作品集整理/AI漫剧/霸总穿越/霸总第1集（ct).mp4" },
+    { title: "霸总穿越 第二集", type: "video", src: "file:///F:/作品集整理/AI漫剧/霸总穿越/霸总第2集（lyx）.mp4" },
+    { title: "霸总穿越 第三集", type: "video", src: "file:///F:/作品集整理/AI漫剧/霸总穿越/霸总第3集（gy）.mp4" },
+    { title: "青蛇 片段 09", type: "video", src: "file:///F:/作品集整理/AI漫剧/青蛇/青蛇-9（中英）（瑞.mp4" },
+    { title: "青蛇 片段 11", type: "video", src: "file:///F:/作品集整理/AI漫剧/青蛇/青蛇-11（中英）（瑞）.mp4" },
+    { title: "青蛇 片段 12", type: "video", src: "file:///F:/作品集整理/AI漫剧/青蛇/青蛇12（中英）（瑞）.mp4" },
+    { title: "青蛇 片段 27", type: "video", src: "file:///F:/作品集整理/AI漫剧/青蛇/青蛇-27（中英）（瑞）.mp4" },
+    { title: "青蛇 片段 28", type: "video", src: "assets/works/hosted/青蛇-28.mp4" },
+    { title: "青蛇 片段 30", type: "video", src: "file:///F:/作品集整理/AI漫剧/青蛇/青蛇-30（中英）（瑞）.mp4" },
+    { title: "Omega EP01", type: "video", src: "file:///F:/作品集整理/AI漫剧/Omega/EP01.mp4" },
+    { title: "Omega EP02", type: "video", src: "file:///F:/作品集整理/AI漫剧/Omega/EP02.mp4" },
+    { title: "Omega EP03", type: "video", src: "file:///F:/作品集整理/AI漫剧/Omega/EP03.mp4" },
+    { title: "Omega 片段 12", type: "video", src: "file:///F:/作品集整理/AI漫剧/Omega/Omega-12（中英）（瑞）.mp4" },
+    { title: "Omega 片段 16", type: "video", src: "file:///F:/作品集整理/AI漫剧/Omega/Omega-16（中英）（瑞）.mp4" },
+    { title: "Omega 片段 17", type: "video", src: "file:///F:/作品集整理/AI漫剧/Omega/Omega-17（中英）（瑞）.mp4" },
+    { title: "Omega 片段 40", type: "video", src: "file:///F:/作品集整理/AI漫剧/Omega/Omega-40（中英）（瑞）.mp4" },
+    { title: "Omega 片段 41", type: "video", src: "file:///F:/作品集整理/AI漫剧/Omega/Omega-41（中英）（瑞）.mp4" },
+    { title: "Omega 片段 42", type: "video", src: "file:///F:/作品集整理/AI漫剧/Omega/Omega-42（中英）（瑞）.mp4" },
+    { title: "书烬先导片", type: "video", src: "file:///F:/作品集整理/AI漫剧/书烬/《书烬》先导片.mp4" },
+    { title: "Last Signal", type: "video", src: "file:///F:/作品集整理/AI漫剧/last signal/7月11日.mp4" },
+    { title: "菜市场 Vlog", type: "video", src: "file:///F:/作品集整理/AI漫剧/菜市场vlog.mp4" },
+    { title: "恋爱综艺", type: "video", src: "file:///F:/作品集整理/AI漫剧/恋爱综艺.mp4" },
+    { title: "末世系列", type: "video", src: "file:///F:/作品集整理/AI漫剧/末世系列/末世-11.mp4" },
+    { title: "中秋主题短片", type: "video", src: "file:///F:/作品集整理/AI漫剧/中秋/最终.mp4" },
   ],
 };
 
@@ -128,27 +124,27 @@ const makeGraphicCollection = (groupNames, limit = 18) => {
 };
 
 collections.posterHighlights = [
-  { title: "娴锋姤鍚堥泦灏侀潰", type: "image", src: "assets/works/featured-poster-mosaic.webp" },
-  ...makeGraphicCollection([], 20),
+  { title: "海报合集封面", type: "image", src: "assets/works/featured-poster-mosaic.webp" },
+  ...makeGraphicCollection(["海报 / 漫剧海报", "电影级海报", "海报 / 字体设计", "海报 / 美食餐饮海报", "西安文旅"], 20),
 ];
 
 collections.brandPosterHighlights = [
-  { title: "浜у搧鍝佺墝娴锋姤鍚堥泦", type: "image", src: "assets/works/featured-brand-mosaic.webp" },
-  ...makeGraphicCollection([], 18),
+  { title: "产品品牌海报合集", type: "image", src: "assets/works/featured-brand-mosaic.webp" },
+  ...makeGraphicCollection(["产品品牌海报", "海报 / 产品品牌海报", "粉烧玻璃视觉方案"], 18),
 ];
 
 collections.cityPosterHighlights = [
-  { title: "鍩庡競瑙嗚娴锋姤鍚堥泦", type: "image", src: "assets/works/featured-city-mosaic.webp" },
-  ...makeGraphicCollection([], 18),
+  { title: "城市视觉海报合集", type: "image", src: "assets/works/featured-city-mosaic.webp" },
+  ...makeGraphicCollection(["城市风格海报", "海报 / 城市风格海报", "西安文旅"], 18),
 ];
 
 collections.logoBrandHighlights = [
-  { title: "Logo 涓庡搧鐗岀郴缁熷皝闈?", type: "image", src: "assets/works/featured-logo-mosaic.webp" },
-  { title: "Dog Chef 鍝佺墝鏍囧織", type: "image", src: "assets/works/pdf-pages/page-04.webp" },
-  { title: "Logo 璁捐鏂规", type: "image", src: "assets/works/pdf-pages/page-06.webp" },
-  { title: "鍝佺墝杈呭姪鍥惧舰", type: "image", src: "assets/works/pdf-pages/page-07.webp" },
-  { title: "鍝佺墝瑙嗚寤跺睍", type: "image", src: "assets/works/pdf-pages/page-08.webp" },
-  { title: "Logo 鏍囧織鍚堥泦", type: "image", src: "assets/works/pdf-pages/page-18.webp" },
+  { title: "Logo 与品牌系统封面", type: "image", src: "assets/works/featured-logo-mosaic.webp" },
+  { title: "Dog Chef 品牌标志", type: "image", src: "assets/works/pdf-pages/page-04.webp" },
+  { title: "Logo 设计方案", type: "image", src: "assets/works/pdf-pages/page-06.webp" },
+  { title: "品牌辅助图形", type: "image", src: "assets/works/pdf-pages/page-07.webp" },
+  { title: "品牌视觉延展", type: "image", src: "assets/works/pdf-pages/page-08.webp" },
+  { title: "Logo 标志合集", type: "image", src: "assets/works/pdf-pages/page-18.webp" },
 ];
 
 if (hero && floatingName) {
@@ -223,26 +219,26 @@ if (typedStatement) {
 const categoryData = [
   {
     index: "01",
-    name: "骞抽潰璁捐",
-    desc: "娴锋姤銆佸搧鐗岃瑙夈€佸瓧浣撶増寮忋€丩ogo 涓庡浼犵墿鏂欍€?",
+    name: "平面设计",
+    desc: "海报、品牌视觉、字体版式、Logo 与宣传物料。",
     collection: "graphic",
   },
   {
     index: "02",
-    name: "AI 婕墽",
-    desc: "AI 褰卞儚鍙欎簨銆佽鑹茬煭鍓с€佺郴鍒楀寲瑙嗛鍜屾晠浜嬪壀杈戙€?",
+    name: "AI 漫剧",
+    desc: "AI 影像叙事、角色短剧、系列化视频和故事剪辑。",
     collection: "aiDrama",
   },
   {
     index: "03",
-    name: "鍓緫涓庣壒鏁?",
-    desc: "鑺傚鍓緫銆佺晫闈㈣浆鍦恒€丄E 鍔ㄦ晥銆佹墜鍔胯窡韪拰瑙嗚鐗规晥銆?",
+    name: "剪辑与特效",
+    desc: "节奏剪辑、界面转场、AE 动效、手势跟踪和视觉特效。",
     collection: "editing",
   },
   {
     index: "04",
-    name: "鍟嗕笟骞垮憡",
-    desc: "浜у搧骞垮憡銆佹枃鏃呰棰戙€佸晢涓氱煭鐗囦笌瑙嗚鍖呰銆?",
+    name: "商业广告",
+    desc: "产品广告、文旅视频、商业短片与视觉包装。",
     collection: "commercial",
   },
 ];
@@ -251,10 +247,10 @@ let activeCategory = 0;
 
 const openLibraryCategory = (collection) => {
   const categoryNames = {
-    graphic: "骞抽潰璁捐",
-    aiDrama: "AI婕墽",
-    editing: "鍓緫浣滃搧",
-    commercial: "骞垮憡",
+    graphic: "平面设计",
+    aiDrama: "AI漫剧",
+    editing: "剪辑作品",
+    commercial: "广告",
   };
 
   document.querySelector("#library")?.scrollIntoView({ behavior: "smooth" });
@@ -413,8 +409,8 @@ if (previewModal && previewBody && previewTitle && previewClose) {
     target.innerHTML = "";
 
     if (item.type === "video") {
-      if (isUnavailableLocalSource(item.src)) {
-        renderUnavailableVideo(target, item);
+      if (isLocalOnlySource(item.src)) {
+        renderLocalOnlyNotice(target, item);
         return;
       }
       const video = document.createElement("video");
@@ -437,7 +433,7 @@ if (previewModal && previewBody && previewTitle && previewClose) {
     }
   };
 
-  const openCollection = (collectionKey, title = "浣滃搧鍚堥泦") => {
+  const openCollection = (collectionKey, title = "作品合集") => {
     const items = collections[collectionKey] || [];
     if (!items.length) return;
 
@@ -476,13 +472,13 @@ if (previewModal && previewBody && previewTitle && previewClose) {
   const openPreview = (trigger) => {
     const collectionKey = trigger.dataset.collection;
     if (collectionKey) {
-      openCollection(collectionKey, trigger.dataset.previewTitle || "浣滃搧鍚堥泦");
+      openCollection(collectionKey, trigger.dataset.previewTitle || "作品合集");
       return;
     }
 
     const src = trigger.dataset.previewSrc;
     const type = trigger.dataset.previewType;
-    const title = trigger.dataset.previewTitle || "浣滃搧棰勮";
+    const title = trigger.dataset.previewTitle || "作品预览";
     if (!src || !type) return;
 
     previewBody.innerHTML = "";
@@ -564,7 +560,7 @@ if (libraryTabs && libraryGroups && Array.isArray(window.WORKS_LIBRARY)) {
   let activeLibrary = 0;
 
   if (window.GRAPHIC_LIBRARY) {
-    const graphicIndex = window.WORKS_LIBRARY.findIndex((item) => item.title === "骞抽潰璁捐");
+    const graphicIndex = window.WORKS_LIBRARY.findIndex((item) => item.title === "平面设计");
     if (graphicIndex >= 0) {
       window.WORKS_LIBRARY[graphicIndex] = window.GRAPHIC_LIBRARY;
     }
@@ -581,8 +577,8 @@ if (libraryTabs && libraryGroups && Array.isArray(window.WORKS_LIBRARY)) {
       previewTitle.textContent = item.title;
 
       if (item.type === "video") {
-        if (isUnavailableLocalSource(item.src)) {
-          renderUnavailableVideo(previewBody, item);
+        if (isLocalOnlySource(item.src)) {
+          renderLocalOnlyNotice(previewBody, item);
           previewModal.classList.add("is-open");
           previewModal.setAttribute("aria-hidden", "false");
           document.body.style.overflow = "hidden";
@@ -623,10 +619,10 @@ if (libraryTabs && libraryGroups && Array.isArray(window.WORKS_LIBRARY)) {
       libraryTabs.appendChild(tab);
     });
 
-    if (category.title === "骞抽潰璁捐") {
+    if (category.title === "平面设计") {
       const pdfEntry = category.groups
         .flatMap((group) => group.items)
-        .find((item) => item.type === "pdf" && item.title.includes("浣滃搧闆嗘暣鐞?026.3"));
+        .find((item) => item.type === "pdf" && item.title.includes("作品集整理2026.3"));
 
       if (pdfEntry) {
         const pdfCard = document.createElement("button");
@@ -634,8 +630,8 @@ if (libraryTabs && libraryGroups && Array.isArray(window.WORKS_LIBRARY)) {
         pdfCard.className = "library-pdf-feature";
         pdfCard.innerHTML = `
           <span>PDF Portfolio</span>
-          <strong>浣滃搧闆嗘暣鐞?2026.3</strong>
-          <em>鐐瑰嚮鎵撳紑瀹屾暣骞抽潰璁捐浣滃搧闆?PDF</em>
+          <strong>作品集整理 2026.3</strong>
+          <em>点击打开完整平面设计作品集 PDF</em>
         `;
         pdfCard.addEventListener("click", () => openLibraryItem(pdfEntry));
         libraryGroups.appendChild(pdfCard);
@@ -648,7 +644,7 @@ if (libraryTabs && libraryGroups && Array.isArray(window.WORKS_LIBRARY)) {
       details.open = index === 0;
 
       const summary = document.createElement("summary");
-      summary.innerHTML = `<span>${group.title}</span><span class="library-count">${group.items.length} 椤?/span>`;
+      summary.innerHTML = `<span>${group.title}</span><span class="library-count">${group.items.length} 项</span>`;
       details.appendChild(summary);
 
       const items = document.createElement("div");
@@ -690,7 +686,7 @@ if (libraryTabs && libraryGroups && Array.isArray(window.WORKS_LIBRARY)) {
           const more = document.createElement("button");
           more.type = "button";
           more.className = "library-item library-more";
-          more.innerHTML = `<span>more</span><strong>缁х画鏄剧ず ${group.items.length - visibleCount} 椤?/strong>`;
+          more.innerHTML = `<span>more</span><strong>继续显示 ${group.items.length - visibleCount} 项</strong>`;
           more.addEventListener("click", () => {
             visibleCount += 24;
             renderGroupItems();
@@ -708,4 +704,3 @@ if (libraryTabs && libraryGroups && Array.isArray(window.WORKS_LIBRARY)) {
 
   renderLibrary();
 }
-

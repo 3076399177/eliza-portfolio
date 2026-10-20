@@ -593,7 +593,7 @@ window.WORKS_LIBRARY = [
           {
             "title": "青蛇-28（中英）（瑞）",
             "type": "video",
-            "src": "file:///F:/%E4%BD%9C%E5%93%81%E9%9B%86%E6%95%B4%E7%90%86/AI%E6%BC%AB%E5%89%A7/%E9%9D%92%E8%9B%87/%E9%9D%92%E8%9B%87-28%EF%BC%88%E4%B8%AD%E8%8B%B1%EF%BC%89%EF%BC%88%E7%91%9E%EF%BC%89.mp4",
+            "src": "assets/works/hosted/青蛇-28.mp4",
             "size": 45777000
           },
           {
