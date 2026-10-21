@@ -599,13 +599,13 @@ window.GRAPHIC_LIBRARY = {
         {
           "title": "四神瓦当",
           "type": "video",
-          "src": "assets/works/hosted/四神瓦当.mp4",
+          "src": "assets/works/web-video/video-020.mp4",
           "sourceName": "四神瓦当.mp4"
         },
         {
           "title": "鎏金羊灯",
           "type": "video",
-          "src": "file:///F:/作品集整理/平面设计/海报/动态海报（西安博物院合作）/鎏金羊灯.mp4",
+          "src": "assets/works/web-video/video-019.mp4",
           "sourceName": "鎏金羊灯.mp4"
         }
       ]
@@ -874,7 +874,7 @@ window.GRAPHIC_LIBRARY = {
         {
           "title": "7月11日",
           "type": "video",
-          "src": "file:///F:/作品集整理/平面设计/电影级海报/7月11日.mp4",
+          "src": "assets/works/web-video/video-011.mp4",
           "sourceName": "7月11日.mp4"
         },
         {
@@ -958,37 +958,37 @@ window.GRAPHIC_LIBRARY = {
         {
           "title": "图片制作视频或游戏视频方案 (1)",
           "type": "video",
-          "src": "file:///F:/作品集整理/平面设计/电影级海报/图片制作视频或游戏视频方案%20(1).mp4",
+          "src": "assets/works/web-video/video-013.mp4",
           "sourceName": "图片制作视频或游戏视频方案 (1).mp4"
         },
         {
           "title": "图片制作视频或游戏视频方案 (2)",
           "type": "video",
-          "src": "file:///F:/作品集整理/平面设计/电影级海报/图片制作视频或游戏视频方案%20(2).mp4",
+          "src": "assets/works/web-video/video-014.mp4",
           "sourceName": "图片制作视频或游戏视频方案 (2).mp4"
         },
         {
           "title": "图片制作视频或游戏视频方案 (3)",
           "type": "video",
-          "src": "file:///F:/作品集整理/平面设计/电影级海报/图片制作视频或游戏视频方案%20(3).mp4",
+          "src": "assets/works/web-video/video-015.mp4",
           "sourceName": "图片制作视频或游戏视频方案 (3).mp4"
         },
         {
           "title": "图片制作视频或游戏视频方案 (4)",
           "type": "video",
-          "src": "file:///F:/作品集整理/平面设计/电影级海报/图片制作视频或游戏视频方案%20(4).mp4",
+          "src": "assets/works/web-video/video-016.mp4",
           "sourceName": "图片制作视频或游戏视频方案 (4).mp4"
         },
         {
           "title": "图片制作视频或游戏视频方案 (5)",
           "type": "video",
-          "src": "file:///F:/作品集整理/平面设计/电影级海报/图片制作视频或游戏视频方案%20(5).mp4",
+          "src": "assets/works/web-video/video-017.mp4",
           "sourceName": "图片制作视频或游戏视频方案 (5).mp4"
         },
         {
           "title": "图片制作视频或游戏视频方案",
           "type": "video",
-          "src": "file:///F:/作品集整理/平面设计/电影级海报/图片制作视频或游戏视频方案.mp4",
+          "src": "assets/works/web-video/video-018.mp4",
           "sourceName": "图片制作视频或游戏视频方案.mp4"
         },
         {
@@ -1018,7 +1018,7 @@ window.GRAPHIC_LIBRARY = {
         {
           "title": "海边破旧小镇__正向提示词：__黄昏海滨小镇全景，风衣男子手",
           "type": "video",
-          "src": "file:///F:/作品集整理/平面设计/电影级海报/海边破旧小镇__正向提示词：__黄昏海滨小镇全景，风衣男子手.mp4",
+          "src": "assets/works/web-video/video-012.mp4",
           "sourceName": "海边破旧小镇__正向提示词：__黄昏海滨小镇全景，风衣男子手.mp4"
         }
       ]
